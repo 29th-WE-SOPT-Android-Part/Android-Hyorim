@@ -21,27 +21,39 @@
         android:layout_marginTop="60dp"/>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
         android:id="@+id/ID_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginStart="20dp"
         android:text="아이디"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <EditText
         android:id="@+id/ID_editText"
-
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:padding="10dp"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/ID_textView"
         app:layout_constraintTop_toBottomOf="@+id/ID_textView"
-        android:hint="아이디를 입력하세요"/>
+        android:background="@drawable/edittext_border"
+        android:hint="아이디를 입력해주세요"/>
 
 
     <TextView
@@ -50,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="패스워드"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/ID_editText"
         app:layout_constraintTop_toBottomOf="@+id/ID_editText" />
 
@@ -57,36 +70,43 @@
         android:id="@+id/PW_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:hint="패스워드를 입력해주세요"
+        android:inputType="textPassword"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="@+id/ID_editText"
         app:layout_constraintStart_toStartOf="@+id/PW_textView"
-        app:layout_constraintTop_toBottomOf="@+id/PW_textView"
-        android:hint="패스워드를 입력하세요"/>
+        app:layout_constraintTop_toBottomOf="@+id/PW_textView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginBtn"
         android:layout_width="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="80dp"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:backgroundTint="#018786"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <TextView
         android:id="@+id/signUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="회원가입"
-        android:textColor="@color/black"
-        android:backgroundTint="#EEEEEE"
-        android:layout_marginTop="5dp"
+        android:textColor="#aaaaaa"
+        android:backgroundTint="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
