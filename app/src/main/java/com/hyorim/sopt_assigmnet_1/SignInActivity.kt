@@ -16,6 +16,7 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        /** Login Button*/
         binding.loginBtn.setOnClickListener {
 
             // ID, PW의 EditText의 null 여부 판단
@@ -32,9 +33,17 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, id + "님 환영합니다", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
             }
         }
+
+        /** SignUp Button */
+        binding.signUpBtn.setOnClickListener{
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
