@@ -1,3 +1,5 @@
+# Android-Hyorim
+![github_김효림_ver1-17](https://user-images.githubusercontent.com/70698151/135754253-98a770e0-9c09-479c-bdfa-b955c3d4011a.png)
 
 # Week1. Android Assignment
 > Summery : Make 'Sign In', 'Sign Up','Self Introduction' pages
@@ -6,19 +8,10 @@
 - [x] Level 2
 - [ ] Level 3
 
-로그인 화면 | 회원가입 화면 | 자기소개 페이지 | Github 페이지 연결
------------- | ------------- | ------------- | -------------
-isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확인 <br> 2. registerForActivityResult와<br/> 명시적 Intent로 데이터 교환 | NestedScrollView 활용 | 암시적 Intent 사용
-
-
-
-https://user-images.githubusercontent.com/59546818/136701225-fd0f9ca7-1075-40e4-a6eb-86ed881897b0.mp4
-
-
-https://user-images.githubusercontent.com/59546818/136701241-44687ea7-f05e-49fe-ab10-a565bd5e90ac.mp4
-
-
-
+로그인 화면 | 회원가입 화면 | 자기소개 페이지
+------------ | ------------- | -------------
+isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확인 <br> 2. registerForActivityResult와<br/> 명시적 Intent로 데이터 교환 | 1.NestedScrollView 활용 2.암시적 Intent 사용(Github연결)
+https://user-images.githubusercontent.com/59546818/136701941-62872012-3f37-4c5f-b6fa-2cb8d8eaf608.mp4 | https://user-images.githubusercontent.com/59546818/136701870-46022127-3619-42e2-a0c5-e567b52b27ce.mp4 | https://user-images.githubusercontent.com/59546818/136701241-44687ea7-f05e-49fe-ab10-a565bd5e90ac.mp4
 
 <br>
 
@@ -196,7 +189,3 @@ Intent란? 4대 컴포넌트끼리 유기적으로 정보전달을 가능하게 
 
 
 
-
-
-# Android-Hyorim
-![github_김효림_ver1-17](https://user-images.githubusercontent.com/70698151/135754253-98a770e0-9c09-479c-bdfa-b955c3d4011a.png)
