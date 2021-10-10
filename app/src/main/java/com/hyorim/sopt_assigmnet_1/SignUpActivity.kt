@@ -29,18 +29,25 @@ class SignUpActivity : AppCompatActivity() {
             var isIdNull    = id.isNullOrBlank()
             var isPwNull    = pw.isNullOrBlank()
 
-            Log.e(Tag,"isNameNull   =" + isNameNull.toString())
-            Log.e(Tag,"isIdNull     =" + isIdNull.toString())
-            Log.e(Tag,"isPwNull     =" + isPwNull.toString())
+            Log.e(Tag,"isNameNull :" + isNameNull.toString())
+            Log.e(Tag,"isIdNull   :" + isIdNull.toString())
+            Log.e(Tag,"isPwNull   :" + isPwNull.toString())
 
+            // 모든 정보가 다 입력되어 있을 때
             if (!isNameNull && !isIdNull && !isPwNull){
                 val intent = Intent(this, SignInActivity::class.java)
-                startActivity(intent)
-                finish()
+                intent.putExtra("id",id)
+                intent.putExtra("pw", pw)
+                setResult(RESULT_OK, intent)
+//                finish()
+                if (!isFinishing) finish()
+
             } else {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             }
 
         }
     }
+
+
 }
