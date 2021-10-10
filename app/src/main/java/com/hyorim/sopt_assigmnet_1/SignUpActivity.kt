@@ -10,9 +10,9 @@ import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignUpBinding
 class SignUpActivity : AppCompatActivity() {
     var Tag = "SignUpActivity :"
     private lateinit var binding: ActivitySignUpBinding
-    private lateinit var name : String
-    private lateinit var id : String
-    private lateinit var pw : String
+    private lateinit var name   : String
+    private lateinit var id     : String
+    private lateinit var pw     : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,27 +25,23 @@ class SignUpActivity : AppCompatActivity() {
 
         /**Sign Up Button*/
         binding.signUpBtn.setOnClickListener {
-
-            // 모든 정보가 다 입력되어 있을 때
-            if (inputComplete()){
+            if (isInputComplete()){
                 val intent = Intent(this, SignInActivity::class.java)
-                intent.putExtra("id",id)
+                intent.putExtra("id", id)
                 intent.putExtra("pw", pw)
                 setResult(RESULT_OK, intent)
-//                finish()
                 if (!isFinishing) finish()
-
             } else {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    fun inputComplete() : Boolean{
+    private fun isInputComplete() : Boolean{
 
-        var isNameNull  = name.isNullOrBlank()
-        var isIdNull    = id.isNullOrBlank()
-        var isPwNull    = pw.isNullOrBlank()
+        val isNameNull  = name.isBlank()
+        val isIdNull    = id.isBlank()
+        val isPwNull    = pw.isBlank()
 
         Log.e(Tag, "isNameNull :$isNameNull") //string template function
         Log.e(Tag, "isIdNull   :$isIdNull")
