@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.gitIcon.setOnClickListener{
-            Log.i(tag, "git icon clicked")
+            Log.i(tag, "Git Icon Clicked")
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://github.com/KxxHyoRim")
             startActivity(intent)
