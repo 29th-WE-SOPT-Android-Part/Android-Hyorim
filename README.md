@@ -10,8 +10,8 @@
 
 로그인 화면 | 회원가입 화면 | 자기소개 페이지
 ------------ | ------------- | -------------
-isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확인 <br> 2. registerForActivityResult와<br/> 명시적 Intent로 데이터 교환 | 1.NestedScrollView 활용 2.암시적 Intent 사용(Github연결)
-https://user-images.githubusercontent.com/59546818/136701941-62872012-3f37-4c5f-b6fa-2cb8d8eaf608.mp4 | https://user-images.githubusercontent.com/59546818/136701870-46022127-3619-42e2-a0c5-e567b52b27ce.mp4 | https://user-images.githubusercontent.com/59546818/136701241-44687ea7-f05e-49fe-ab10-a565bd5e90ac.mp4
+isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확인 <br> 2. registerForActivityResult와<br/> 명시적 Intent로 데이터 교환 | 1.NestedScrollView 활용 <br> 2.암시적 Intent 사용(Github연결)
+<img src="https://user-images.githubusercontent.com/59546818/136702618-81e1a173-d785-44d1-9bc9-a16af7a60581.gif" width="250"> | <img src="https://user-images.githubusercontent.com/59546818/136703000-287a3141-5597-4ffe-86d7-379445d16136.gif" width="250"> | <img src="https://user-images.githubusercontent.com/59546818/136702680-71609b28-6552-4d10-9601-745fa6fd6c11.gif" width="250">
 
 <br>
 
