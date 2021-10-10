@@ -23,8 +23,6 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.e("Tag", "Onstart()")
-
         id_et = binding.IDEditText
         pw_et = binding.PWEditText
 
