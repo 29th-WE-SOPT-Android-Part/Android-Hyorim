@@ -39,9 +39,9 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun isInputComplete() : Boolean{
 
-        val isNameNull  = name.isBlank()
-        val isIdNull    = id.isBlank()
-        val isPwNull    = pw.isBlank()
+        var isNameNull  = name.isNullOrBlank()
+        var isIdNull    = id.isNullOrBlank()
+        var isPwNull    = pw.isNullOrBlank()
 
         Log.e(Tag, "isNameNull :$isNameNull") //string template function
         Log.e(Tag, "isIdNull   :$isIdNull")

@@ -59,11 +59,11 @@ class SignInActivity : AppCompatActivity() {
     private fun isInputComplete(): Boolean {
         // ID, PW의 EditText의 null 여부 판단
 
-        val id = idEditText.text.toString()
-        val pw = pwEditText.text.toString()
+        var id = idEditText.text.toString()
+        var pw = pwEditText.text.toString()
 
-        val isIdNull = id.isBlank()
-        val isPwNull = pw.isBlank()
+        var isIdNull = id.isNullOrBlank()
+        var isPwNull = pw.isNullOrBlank()
 
         Log.e(tag, "isIdNull =$isIdNull")
         Log.e(tag, "isPwNull =$isPwNull")
