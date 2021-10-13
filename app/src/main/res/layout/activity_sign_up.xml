@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOPTHub"
+        android:textSize="30dp"
+        android:textColor="#018786"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/name_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="30dp"
+        android:text="이름"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <EditText
+        android:id="@+id/name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/name_textView"
+        app:layout_constraintTop_toBottomOf="@+id/name_textView"
+        android:background="@drawable/edittext_border"
+        android:hint="이름을 입력해주세요"/>
+
+    <TextView
+        android:id="@+id/ID_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="아이디"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/name_editText"
+        app:layout_constraintTop_toBottomOf="@+id/name_editText" />
+
+    <EditText
+        android:id="@+id/ID_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:hint="아이디를 입력해주세요"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/name_editText"
+        app:layout_constraintStart_toStartOf="@+id/ID_textView"
+        app:layout_constraintTop_toBottomOf="@+id/ID_textView" />
+
+
+    <TextView
+        android:id="@+id/PW_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="패스워드"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/ID_editText"
+        app:layout_constraintTop_toBottomOf="@+id/ID_editText" />
+
+    <EditText
+        android:id="@+id/PW_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:hint="패스워드를 입력해주세요"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/ID_editText"
+        app:layout_constraintStart_toStartOf="@+id/PW_textView"
+        app:layout_constraintTop_toBottomOf="@+id/PW_textView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUpBtn"
+        android:layout_width="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:text="회원가입 완료"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/button_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
