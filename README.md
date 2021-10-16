@@ -26,31 +26,31 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
 4) 회원가입 버튼 누르면 Intent를 활용하여 **SignUpActivity**로 이동
 
 - **로그인 버튼 눌렀을 때**
-```Kotlin
-binding.loginBtn.setOnClickListener {
-    if (isInputComplete()) {
-        Toast.makeText(this, idEditText.text.toString() + "님 환영합니다", Toast.LENGTH_SHORT).show()
-        startActivity(Intent(this, HomeActivity::class.java))
-        finish()
-    } else {
-        Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+    ```Kotlin
+    binding.loginBtn.setOnClickListener {
+        if (isInputComplete()) {
+            Toast.makeText(this, idEditText.text.toString() + "님 환영합니다", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        } else {
+            Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+        }
     }
-}
-```
+    ```
 
 - **입력 조건 충족 확인**
-```Kotlin
-private fun isInputComplete(): Boolean {
-    val id = idEditText.text.toString()
-    val pw = pwEditText.text.toString()
-    val isIdNull = id.isBlank()
-    val isPwNull = pw.isBlank()
-    Log.e(tag, "isIdNull =$isNullOrBlank")
-    Log.e(tag, "isPwNull =$isNullOrBlank")
+    ```Kotlin
+    private fun isInputComplete(): Boolean {
+        val id = idEditText.text.toString()
+        val pw = pwEditText.text.toString()
+        val isIdNull = id.isBlank()
+        val isPwNull = pw.isBlank()
+        Log.e(tag, "isIdNull =$isNullOrBlank")
+        Log.e(tag, "isPwNull =$isNullOrBlank")
 
-    return !isIdNull && !isPwNull
-}
-```
+        return !isIdNull && !isPwNull
+    }
+    ```
 
 <br/>
 
@@ -60,32 +60,32 @@ private fun isInputComplete(): Boolean {
 2. 조건이 충족 되면 `finish()`를 활용해 **SignInActivity**로 이동
 3. 로그인 화면으로 돌아왔을 때 아이디와, 비밀번호가 입력되어 있어야함 **[도전과제]**
 - **`Intent.putExtra()` 데이터를 보내는 SignUpActivity**
-```Kotlin
-binding.signUpBtn.setOnClickListener {
-    if (isInputComplete()){
-        val intent = Intent(this, SignInActivity::class.java)
-        intent.putExtra("id", id)
-        intent.putExtra("pw", pw)
-        setResult(RESULT_OK, intent)
-        if (!isFinishing) finish()
-    } else {
-        Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
-    }
-}
-```
-
-- **`registerForActivityResult` 데이터를 받는 SignIpActivity**
-```kotlin
-activityResultLauncher =
-    registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (it.resultCode == RESULT_OK) {
-            val idFromSignUp = it.data?.getStringExtra("id") ?: ""    // default값 ""로 지정
-            val pwFromSignUp = it.data?.getStringExtra("pw") ?: ""
-            idEditText.setText(idFromSignUp)
-            pwEditText.setText(pwFromSignUp)
+    ```Kotlin
+    binding.signUpBtn.setOnClickListener {
+        if (isInputComplete()){
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.putExtra("id", id)
+            intent.putExtra("pw", pw)
+            setResult(RESULT_OK, intent)
+            if (!isFinishing) finish()
+        } else {
+            Toast.makeText(this, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
         }
     }
-```
+    ```
+
+- **`registerForActivityResult` 데이터를 받는 SignIpActivity**
+    ```kotlin
+    activityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                val idFromSignUp = it.data?.getStringExtra("id") ?: ""    // default값 ""로 지정
+                val pwFromSignUp = it.data?.getStringExtra("pw") ?: ""
+                idEditText.setText(idFromSignUp)
+                pwEditText.setText(pwFromSignUp)
+            }
+        }
+    ```
 > 송신부 : 앞선 Activity에 데이터를 전송하기 위해 setResult()로 전달 <br>
 > 수신부 : startActivityForResult로 데이터 수신
 <br/>
@@ -93,54 +93,55 @@ activityResultLauncher =
 ### 3. 자기소개 페이지 HomeActivity
 1. ImageView, TextView 활용
 2. 암시적 인텐트 활용 -> Githup 페이지로 이동
-```kotlin
-binding.gitIcon.setOnClickListener{
-    Log.i(tag, "Git Icon Clicked")
-    val intent = Intent(Intent.ACTION_VIEW)
-    intent.data = Uri.parse("https://github.com/KxxHyoRim")
-    startActivity(intent)
-}
-```
-Intent란? 4대 컴포넌트끼리 유기적으로 정보전달을 가능하게 해주는 전달 수단
-|명시적 Intent| 실행되어야 할 Component와 Activity가 특정되어 있는 경우 |
-|--|--|
-|**암시적 Intent**| **Intent의 액션과 데이터는 지정되어 있으나, 호출할 대상이 달라질 수 있는 경우** <br> ex. 웹 열기 : Naver, Chrome, Safari..|
+    ```kotlin
+    binding.gitIcon.setOnClickListener{
+        Log.i(tag, "Git Icon Clicked")
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse("https://github.com/KxxHyoRim")
+        startActivity(intent)
+    }
+    ```
+    - Intent란? 4대 컴포넌트끼리 유기적으로 정보전달을 가능하게 해주는 전달 수단
+    
+    |명시적 Intent| 실행되어야 할 Component와 Activity가 특정되어 있는 경우 |
+    |-------------|-----------------------------------------------------|
+    |**암시적 Intent**| **Intent의 액션과 데이터는 지정되어 있으나, 호출할 대상이 달라질 수 있는 경우** <br> ex. 웹 열기 : Naver, Chrome, Safari..|
 
 3. 프로필 사진의 비율(1:1)
-```xml
- <ImageView
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:scaleType="fitXY"
-    app:layout_constraintDimensionRatio="1:1" />
-```
+    ```xml
+     <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1:1" />
+    ```
 4. nestedScrollView 사용법 ( NestedScrollView - ViewGroup - Views )
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <androidx.core.widget.NestedScrollView
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-        <!-- View 넣기 ex. ImageView, TextView -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- View 넣기 ex. ImageView, TextView -->
 
-    </androidx.core.widget.NestedScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
 
-```
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-> NestedScrollView는 세로 스크롤만 지원되는 반면, ScrollView는 세로/가로 모두 지원 <br>
-> ScrollView는 RecyclerView와 함께 작동함에 있어서 사용이 불편함.
+    ```
+
+    > NestedScrollView는 세로 스크롤만 지원되는 반면, ScrollView는 세로/가로 모두 지원 <br>
+    > ScrollView는 RecyclerView와 함께 작동함에 있어서 사용이 불편함.
 
 <br/>
 
