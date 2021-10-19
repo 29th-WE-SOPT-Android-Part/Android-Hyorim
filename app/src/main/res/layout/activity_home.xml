@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="introduce"
             type="com.hyorim.sopt_assigmnet_1.Introduce" />
@@ -88,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:text="MBTI    ENTJ"
+                    android:text="@{`MBTI    ` + introduce.mbti}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -100,14 +101,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="60dp"
-                    android:text="반갑습니다:)\n김효림님의 페이지 입니다.\nGithub화면으로 이동하려면\n상단의 Github 아이콘을 클릭해주세요."
+                    android:text="@{introduce.introducuction}"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_mbti"
+                    tools:text="자기소개" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
