@@ -19,14 +19,15 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        name    = binding.nameEditText.text.toString()
-        id      = binding.IDEditText.text.toString()
-        pw      = binding.PWEditText.text.toString()
-
         /**Sign Up Button*/
         binding.signUpBtn.setOnClickListener {
+
+            name    = binding.nameEditText.text.toString()
+            id      = binding.IDEditText.text.toString()
+            pw      = binding.PWEditText.text.toString()
+
             if (isInputComplete()){
-                val intent = Intent(this, SignInActivity::class.java)
+                var intent = Intent(this, SignInActivity::class.java)
                 intent.putExtra("id", id)
                 intent.putExtra("pw", pw)
                 setResult(RESULT_OK, intent)
@@ -43,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
         var isIdNull    = id.isNullOrBlank()
         var isPwNull    = pw.isNullOrBlank()
 
-        Log.e(Tag, "isNameNull :$isNameNull") //string template function
+        Log.e(Tag, "isNameNull :" + isNameNull.toString()) //string template function
         Log.e(Tag, "isIdNull   :$isIdNull")
         Log.e(Tag, "isPwNull   :$isPwNull")
 
@@ -51,6 +52,5 @@ class SignUpActivity : AppCompatActivity() {
 
         return isComplete
     }
-
 
 }
