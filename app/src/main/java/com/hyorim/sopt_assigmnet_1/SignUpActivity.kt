@@ -44,13 +44,11 @@ class SignUpActivity : AppCompatActivity() {
         var isIdNull    = id.isNullOrBlank()
         var isPwNull    = pw.isNullOrBlank()
 
-        Log.e(Tag, "isNameNull :" + isNameNull.toString()) //string template function
-        Log.e(Tag, "isIdNull   :$isIdNull")
-        Log.e(Tag, "isPwNull   :$isPwNull")
+        Log.d(Tag, "isNameNull :$isNameNull") //string template function
+        Log.d(Tag, "isIdNull   :$isIdNull")
+        Log.d(Tag, "isPwNull   :$isPwNull")
 
-        var isComplete  = !isNameNull && !isIdNull && !isPwNull
-
-        return isComplete
+        return !isNameNull && !isIdNull && !isPwNull
     }
 
 }
