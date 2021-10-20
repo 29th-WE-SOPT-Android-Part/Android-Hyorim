@@ -1,12 +1,14 @@
 # Android-Hyorim
 ![github_김효림_ver1-17](https://user-images.githubusercontent.com/70698151/135754253-98a770e0-9c09-479c-bdfa-b955c3d4011a.png)
 
+
+
 # Week1. Android Assignment
 > Summery : Make 'Sign In', 'Sign Up','Self Introduction' pages
 
 - [x] Level 1
 - [x] Level 2
-- [ ] Level 3
+- [X] Level 3
 
 로그인 화면 | 회원가입 화면 | 자기소개 페이지
 ------------ | ------------- | -------------
@@ -45,8 +47,8 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
         val pw = pwEditText.text.toString()
         val isIdNull = id.isBlank()
         val isPwNull = pw.isBlank()
-        Log.e(tag, "isIdNull =$isNullOrBlank")
-        Log.e(tag, "isPwNull =$isNullOrBlank")
+        Log.d(tag, "isIdNull =$isNullOrBlank")
+        Log.d(tag, "isPwNull =$isNullOrBlank")
 
         return !isIdNull && !isPwNull
     }
@@ -86,8 +88,9 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
             }
         }
     ```
-> 송신부 : 앞선 Activity에 데이터를 전송하기 위해 setResult()로 전달 <br>
-> 수신부 : startActivityForResult로 데이터 수신
+    > 송신부 : 앞선 Activity에 데이터를 전송하기 위해 setResult()로 전달 <br>
+    > 수신부 : startActivityForResult로 데이터 수신
+
 <br/>
 
 ### 3. 자기소개 페이지 HomeActivity
@@ -145,7 +148,93 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
 
 <br/>
 
-### 4. 번외로 알게된것
+
+
+## **Level 3 심화과제**
+### **1. DataBinding 개념**
+
+The Data Binding Library is a support library that allows you to **bind UI components in your layouts to data sources** in your app using a **declarative format rather than programmatically.** -Android Developer 
+
+여기서 Declarative는 직역하면 '선언적'이라는 말이 된다. <br/>
+eclarative format :  `@{}` notation을 사용하여 Data Sources 부분과 연결  <br/>
+Prgrammatically : `(UIcomponent).setText("...")` 와 같이 코드로 일일이 구현  <br/><br/>
+장점 : 코드 간결 & nullpointerexception 방지
+ 
+### **2. Build 환경 및 코드**
+1. build.gradle (Module)
+    ``` kotlin
+    dataBinding {
+        enabled = true
+    }
+    ```
+
+2. Data Class 선언(생략가능) <br/>
+
+    데이터 클래스로 데이터 모아놓고 관리하기위해 data class 생성
+    ```kotlin
+    data class Introduce(
+        val name: String,
+        var age: Int,
+        var mbti: String,
+        var introducuction: String,
+        var photo: Int
+    )
+    ```
+
+3. xml
+    layout으로 전체 감싸기 constraintlayout 안에 있던 xmlns 코드 layout쪽으로 이동)
+    ``` xml
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+        <data>
+            <variable
+                name="viewmodel"
+                type="com.myapp.data.ViewModel" />
+        </data>
+        <ConstraintLayout... /> <!-- UI layout's root element -->
+    </layout>
+    ```
+
+
+4. DataAdapter (object로 선언)
+    사진 binding을 위한 DataAdapter - Glide 사용
+    ``` kotlin
+    object BindingConversions {
+
+        @BindingAdapter("imageUrl")
+        @JvmStatic
+        fun loadImage(imageView : ImageView, url : Int){
+            Glide.with(imageView.context).load(url)
+                .into(imageView)
+        }
+    }
+    ```
+    
+5. Data Initialize & Binding 객체와 Data Source 연결
+    ``` kotlin
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+
+    // Initialize
+    val introduce = Introduce (
+        "김효림",
+        23,
+        "ENTJ",
+        "반갑습니다",
+        R.drawable.my_photo
+    )
+
+    binding.introduce = introduce
+    ```
+
+### **3. Kotlin의 Lambda식**
+
+Kotlin에는 SAM(Single Abstract Method) Conversation이 제공된다. <br/>
+SAM 변환을 활용하면 함수형 인터페이스를 구현하는 클래스를 만들지 않아도 된다. <br/>
+SAM은 하나의 추상 메소드에 대해 lambda 식을 제공한다. ex) setOnClickListener() <br/>
+
+
+
+### **4. 번외로 알게된 것**
 1. Kotlin은 String Template을 지원
     - `$변수명`을 통해 변수가 포함된 문자열을 쉽게 출력
     - `Log.e(Tag, "isNameNull :$isNameNull")`
@@ -186,7 +275,6 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
             android:topRightRadius="12dp" />
       </shape>
        ```
-
 
 
 
