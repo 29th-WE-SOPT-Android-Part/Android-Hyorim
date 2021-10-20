@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="introduce"
             type="com.hyorim.sopt_assigmnet_1.Introduce" />
@@ -15,8 +16,10 @@
         tools:context=".HomeActivity">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -26,7 +29,7 @@
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="30dp"
                     android:text="SOPTHub"
                     android:textColor="#018786"
                     android:textSize="30dp"
@@ -39,80 +42,116 @@
                     android:id="@+id/profile_photo"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="100dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="120dp"
                     android:scaleType="fitXY"
-                    app:imageUrl = "@{introduce.photo}"
+                    app:imageUrl="@{introduce.photo}"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    tools:src="@drawable/my_photo" />
 
                 <ImageView
                     android:id="@+id/git_icon"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/git_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/profile_photo" />
 
                 <TextView
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="20dp"
                     android:text="@{`이름 : ` + introduce.name}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/git_icon" />
+                    app:layout_constraintTop_toBottomOf="@+id/profile_photo"
+                    tools:text="이름" />
 
                 <TextView
                     android:id="@+id/tv_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="10dp"
                     android:text="@{`나이    ` + introduce.age}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+                    app:layout_constraintStart_toStartOf="@id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    tools:text="나이" />
 
                 <TextView
                     android:id="@+id/tv_mbti"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="10dp"
                     android:text="@{`MBTI    ` + introduce.mbti}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+                    app:layout_constraintStart_toStartOf="@id/tv_age"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_age"
+                    tools:text="MBTI" />
 
                 <TextView
+                    android:id="@+id/tv_introduction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="@{introduce.introducuction}"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_mbti"
                     app:layout_constraintTop_toBottomOf="@+id/tv_mbti"
                     tools:text="자기소개" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/follower_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:backgroundTint="#FA79B0"
+            android:text="팔로워\n버튼"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+
+        <Button
+            android:id="@+id/repository_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:backgroundTint="#FAB24C"
+            android:text="팔로워\n버튼"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/follower_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
