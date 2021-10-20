@@ -37,6 +37,11 @@ class SignInActivity : AppCompatActivity() {
                 }
             }
 
+        initClickEvent()
+
+    }
+
+    private fun initClickEvent() {
         /** Login Button*/
         binding.loginBtn.setOnClickListener {
             if (isInputComplete()) {
@@ -59,14 +64,14 @@ class SignInActivity : AppCompatActivity() {
     private fun isInputComplete(): Boolean {
         // ID, PW의 EditText의 null 여부 판단
 
-        var id = idEditText.text.toString()
-        var pw = pwEditText.text.toString()
+        val id = idEditText.text.toString()
+        val pw = pwEditText.text.toString()
 
-        var isIdNull = id.isNullOrBlank()
-        var isPwNull = pw.isNullOrBlank()
+        val isIdNull = id.isNullOrBlank()
+        val isPwNull = pw.isNullOrBlank()
 
-        Log.e(tag, "isIdNull =$isIdNull")
-        Log.e(tag, "isPwNull =$isPwNull")
+        Log.d(tag, "isIdNull =$isIdNull")
+        Log.d(tag, "isPwNull =$isPwNull")
 
         return !isIdNull && !isPwNull
     }

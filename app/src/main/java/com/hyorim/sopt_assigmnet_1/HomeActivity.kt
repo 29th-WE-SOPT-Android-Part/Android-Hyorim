@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.hyorim.sopt_assigmnet_1.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    val tag = "HomeActivity :"
+    private val tag = "HomeActivity :"
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         binding.gitIcon.setOnClickListener{
-            Log.i(tag, "Git Icon Clicked")
+            Log.d(tag, "Git Icon Clicked")
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://github.com/KxxHyoRim")
             startActivity(intent)
