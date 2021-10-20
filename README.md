@@ -90,6 +90,7 @@ isNullOrBlank()를 활용한 입력확인 | 1. isBlank()를 활용한 입력확�
     ```
     > 송신부 : 앞선 Activity에 데이터를 전송하기 위해 setResult()로 전달 <br>
     > 수신부 : startActivityForResult로 데이터 수신
+
 <br/>
 
 ### 3. 자기소개 페이지 HomeActivity
