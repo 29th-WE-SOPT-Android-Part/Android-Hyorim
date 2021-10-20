@@ -167,8 +167,6 @@ Prgrammatically : `(UIcomponent).setText("...")` 와 같이 코드로 일일이 
     }
     ```
 
-<br/>
-
 2. Data Class 선언(생략가능) <br/>
 
     데이터 클래스로 데이터 모아놓고 관리하기위해 data class 생성
@@ -229,9 +227,9 @@ Prgrammatically : `(UIcomponent).setText("...")` 와 같이 코드로 일일이 
 
 ### **3. Kotlin의 Lambda식**
 
-    Kotlin에는 SAM(Single Abstract Method) Conversation이 제공된다.
-    SAM 변환을 활용하면 함수형 인터페이스를 구현하는 클래스를 만들지 않아도 된다.
-    SAM은 하나의 추상 메소드에 대해 lambda 식을 제공한다. ex) setOnClickListener()
+Kotlin에는 SAM(Single Abstract Method) Conversation이 제공된다. <br/>
+SAM 변환을 활용하면 함수형 인터페이스를 구현하는 클래스를 만들지 않아도 된다. <br/>
+SAM은 하나의 추상 메소드에 대해 lambda 식을 제공한다. ex) setOnClickListener() <br/>
 
 
 
