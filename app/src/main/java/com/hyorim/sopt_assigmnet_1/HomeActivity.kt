@@ -22,7 +22,8 @@ class HomeActivity : AppCompatActivity() {
             "김효림",
             23,
             "ENTJ",
-            "반갑습니다"
+            "반갑습니다",
+            R.drawable.my_photo
         )
 
         binding.introduce = introduce   // xml 변수 = line 21

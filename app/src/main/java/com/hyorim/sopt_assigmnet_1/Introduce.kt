@@ -5,4 +5,5 @@ data class Introduce(
     var age: Int,
     var mbti: String,
     var introducuction: String,
+    var photo: Int
 )
