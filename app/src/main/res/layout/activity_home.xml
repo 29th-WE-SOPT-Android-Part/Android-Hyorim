@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="introduce"
             type="com.hyorim.sopt_assigmnet_1.Introduce" />
@@ -121,27 +120,37 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <Button
-            android:id="@+id/follower_btn"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:backgroundTint="#FA79B0"
-            android:text="팔로워\n버튼"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" >
 
-        <Button
-            android:id="@+id/repository_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"
-            android:backgroundTint="#FAB24C"
-            android:text="팔로워\n버튼"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+            <Button
+                android:id="@+id/follower_btn"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:backgroundTint="#759392"
+                android:text="팔로워\n버튼"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/repository_btn"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="#448888"
+                android:text="리파지토리\n버튼"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container"
@@ -151,7 +160,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/follower_btn" />
+            app:layout_constraintTop_toBottomOf="@id/button_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

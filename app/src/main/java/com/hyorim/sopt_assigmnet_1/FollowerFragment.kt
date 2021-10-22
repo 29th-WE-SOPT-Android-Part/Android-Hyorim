@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentFollowerBinding
-import com.hyorim.sopt_assigmnet_1.databinding.FragmentRepositoryBinding
 
 
 class FollowerFragment : Fragment() {
@@ -18,10 +17,11 @@ class FollowerFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFollowerBinding.inflate(layoutInflater, container, false)
 
         initAdapter()
+        _binding
 
         return binding.root
     }
@@ -36,8 +36,8 @@ class FollowerFragment : Fragment() {
             listOf(
                 FollowerData("김효림", "내이름"),
                 FollowerData("김효람", "이렇게 불릴 때도 있음"),
-                FollowerData("비버", "내 별명"),
-                FollowerData("루피", "닮은 캐릭터(?)"),
+                FollowerData("비버", "닮은 동물"),
+                FollowerData("루피", "닮은 캐릭터(?)")
             )
         )
         followerAdapter.notifyDataSetChanged()

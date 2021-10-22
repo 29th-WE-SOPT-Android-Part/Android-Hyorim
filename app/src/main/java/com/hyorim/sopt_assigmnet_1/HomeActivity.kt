@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.hyorim.sopt_assigmnet_1.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -29,11 +31,11 @@ class HomeActivity : AppCompatActivity() {
         binding.introduce = introduce   // xml 변수 = line 21
 
         initTransactionEvent()
-        initClickEvent()
+        gitClickEvent()
 
     }
 
-    private fun initClickEvent() {
+    private fun gitClickEvent() {
         binding.gitIcon.setOnClickListener {
             Log.d(tag, "Git Icon Clicked")
             val intent = Intent(Intent.ACTION_VIEW)
@@ -46,21 +48,31 @@ class HomeActivity : AppCompatActivity() {
         val followerFragment = FollowerFragment()
         val repositoryFragment = RepositoryFragment()
 
-        supportFragmentManager.beginTransaction().add(R.id.fragment_container, followerFragment)
+        // Start with default fragment (FollowerFragment)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, followerFragment)
             .commit()
 
+        // when click event happens
+        setFollowerFragment(followerFragment)
+        setRepositoryFragment(repositoryFragment)
+    }
+
+    private fun setFollowerFragment(followerFragment : Fragment) {
         binding.followerBtn.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, followerFragment)
-                .commit()
+            transaction.commit()
         }
+    }
 
+    private fun setRepositoryFragment(repositoryFragment: Fragment) {
         binding.repositoryBtn.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, repositoryFragment)
-                .commit()
+            transaction.commit()
         }
-
     }
+
 
 }

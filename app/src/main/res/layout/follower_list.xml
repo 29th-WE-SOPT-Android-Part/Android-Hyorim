@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="15dp">
@@ -10,7 +11,9 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="6dp"
-        android:background="@mipmap/ic_launcher_round"
+        android:src="@mipmap/ic_launcher_round"
+        android:padding="5dp"
+        android:contentDescription="@string/profile_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,11 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="6dp"
-        android:text="name"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+        tools:text="이름" />
 
     <TextView
         android:id="@+id/introduction_tv"
@@ -32,9 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="자기소개"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/name_tv"
+        tools:text="자기소개" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
