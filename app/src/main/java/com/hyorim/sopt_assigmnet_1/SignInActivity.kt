@@ -12,7 +12,6 @@ import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
 
 class SignInActivity : AppCompatActivity() {
 
-    private val tag = "SignInActivity :"
     private lateinit var binding: ActivitySignInBinding
     private lateinit var idEditText: EditText
     private lateinit var pwEditText: EditText
@@ -74,5 +73,9 @@ class SignInActivity : AppCompatActivity() {
         Log.d(tag, "isPwNull =$isPwNull")
 
         return !isIdNull && !isPwNull
+    }
+
+    companion object {
+        const val tag = "SignInActivity :"
     }
 }

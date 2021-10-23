@@ -12,8 +12,6 @@ import com.hyorim.sopt_assigmnet_1.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    private val tag = "HomeActivity :"
-
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,5 +72,8 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        const val tag = "HomeActivity :"
+    }
 
 }
