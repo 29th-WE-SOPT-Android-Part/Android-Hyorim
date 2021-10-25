@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main">#FF018786</color>
+    <color name="grey_tv">#f2f2f2</color>
+    <color name="grey_status">#9b9b9b</color>
+    <color name="medium_pink">#f658a6</color>
+    <color name="bubblegum">#fa79b0</color>
+    <color name="butterscotch">#fab24c</color>
+    <color name="black_text">#FF333333</color>
 </resources>
