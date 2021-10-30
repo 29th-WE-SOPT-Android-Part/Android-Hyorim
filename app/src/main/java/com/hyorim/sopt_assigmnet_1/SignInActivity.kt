@@ -43,13 +43,15 @@ class SignInActivity : AppCompatActivity() {
     private fun initClickEvent() {
         /** Login Button*/
         binding.loginBtn.setOnClickListener {
-            if (isInputComplete()) {
-                Toast.makeText(this, idEditText.text.toString() + "님 환영합니다", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
-            }
+
+            initNetwork()
+//            if (isInputComplete()) {
+//                Toast.makeText(this, idEditText.text.toString() + "님 환영합니다", Toast.LENGTH_SHORT).show()
+//                startActivity(Intent(this, HomeActivity::class.java))
+//                finish()
+//            } else {
+//                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+//            }
         }
 
         /** SignUp Button */
@@ -58,6 +60,13 @@ class SignInActivity : AppCompatActivity() {
             activityResultLauncher.launch(intent)
             //startActivity(intent)
         }
+    }
+
+    private fun initNetwork() {
+        val requestLoginData = RequestLoginData(
+            binding.IDEditText.text.toString(),
+            binding.PWEditText.text.toString()
+        )
     }
 
     private fun isInputComplete(): Boolean {
