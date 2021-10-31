@@ -26,7 +26,7 @@
         android:layout_marginTop="171dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/github_id"
-        android:textColor="#333333"
+        android:textColor="@color/black_text"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
