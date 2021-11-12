@@ -19,28 +19,29 @@ class HomeActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
 
         val introduce = Introduce(
-            "김효림",
-            23,
-            "ENTJ",
-            "반갑습니다",
+            "Kim Hyo Rim",
+            "Kxxhyorim",
+            "초보 개발자 김효림",
             R.drawable.my_photo
         )
 
         binding.introduce = introduce   // xml 변수 = line 21
 
         initTransactionEvent()
-        gitClickEvent()
+//        gitClickEvent()
 
     }
 
-    private fun gitClickEvent() {
-        binding.gitIcon.setOnClickListener {
-            Log.d(tag, "Git Icon Clicked")
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://github.com/KxxHyoRim")
-            startActivity(intent)
-        }
-    }
+
+
+//    private fun gitClickEvent() {
+//        binding.gitIcon.setOnClickListener {
+//            Log.d(tag, "Git Icon Clicked")
+//            val intent = Intent(Intent.ACTION_VIEW)
+//            intent.data = Uri.parse("https://github.com/KxxHyoRim")
+//            startActivity(intent)
+//        }
+//    }
 
     private fun initTransactionEvent() {
         val followerFragment = FollowerFragment()
