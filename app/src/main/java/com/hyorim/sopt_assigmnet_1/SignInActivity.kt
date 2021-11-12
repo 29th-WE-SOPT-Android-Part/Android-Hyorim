@@ -67,19 +67,20 @@ class SignInActivity : AppCompatActivity() {
             binding.PWEditText.text.toString()
         )
 
-        val call : Call<ResponseLoginData> = ServiceCreator.sampleService.postLogin(requestLoginData)
+        val call: Call<ResponseLoginData> = ServiceCreator.sampleService.postLogin(requestLoginData)
 
         call.enqueue(object : Callback<ResponseLoginData> {
             override fun onResponse(
                 call: Call<ResponseLoginData>,
-                response: Response<ResponseLoginData>
+                response: Response<ResponseLoginData>,
             ) {
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
                     val data = response.body()?.data
 
-                    Toast.makeText(this@SignInActivity, "${data?.email}님 반갑습니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignInActivity, "${data?.name}님 반갑습니다", Toast.LENGTH_SHORT)
+                        .show()
                     startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
-                    finish()    //?
+//                    finish()    //?
                 } else {
                     Toast.makeText(this@SignInActivity, "로그인에 실패하셨습니다", Toast.LENGTH_SHORT).show()
                 }
@@ -90,8 +91,6 @@ class SignInActivity : AppCompatActivity() {
             }
 
         })
-
-
 
     }
 

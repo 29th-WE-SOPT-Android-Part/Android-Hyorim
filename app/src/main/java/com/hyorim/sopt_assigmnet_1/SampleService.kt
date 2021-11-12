@@ -11,4 +11,10 @@ interface SampleService {
     fun postLogin(
         @Body requestLoginData: RequestLoginData
     ): Call<ResponseLoginData>
+
+    @Headers("Content-Type: application/json")
+    @POST("user/signup")
+    fun postSignUp(
+        @Body requestSignUpData: RequestSignUpData
+    ): Call<ResponseSignUpData>
 }
