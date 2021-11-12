@@ -159,3 +159,55 @@ SampleService interface `@POST("user/signup")`에서 /user 로 써서 에러남(
 E/NetworkTest: error:com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 2 column 1 path $
 ```
 
+## Level 2. 도전과제 
+
+도전과제 2-2 OkHttp 활용
+
+1. Interceptor 추가
+2. Interceptor를 클라이언트에 추가
+3. 2의 클라이언트를 레트로핏 빌드시 추가
+4. 기존에 사용하던 헤더 제거(create 할때 헤더를 고정으로 넣어줌)
+
+```kotlin
+interface SampleService {
+    @POST("user/login")
+    fun postLogin(
+        @Body requestLoginData: RequestLoginData
+    ): Call<ResponseLoginData>
+
+    @POST("user/signup")
+    fun postSignUp(
+        @Body requestSignUpData: RequestSignUpData
+    ): Call<ResponseSignUpData>
+}
+```
+
+```kotlin
+object ServiceCreator {
+    private const val BASE_URL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api/"
+
+    var gson = GsonBuilder().setLenient().create()
+
+    // 고정헤더 값에 사용한 Interceptor
+    private val interceptor = Interceptor{
+        val request = it.request()
+            .newBuilder()
+            .addHeader("Content-Type","application/json")
+            .build()
+        return@Interceptor it.proceed(request)
+    }
+
+    val client: OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(interceptor)
+        .build()
+
+    private val retrofit : Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(client)
+        .addConverterFactory(GsonConverterFactory.create(gson)) //gson converter 연동
+        .build()
+
+    val sampleService: SampleService = retrofit.create(SampleService :: class.java)
+
+}
+```
