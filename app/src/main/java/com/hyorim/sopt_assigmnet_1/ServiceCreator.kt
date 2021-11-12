@@ -8,7 +8,7 @@ object ServiceCreator {
 
     private val retrofit : Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create()) //gson converter 연동
         .build()
 
     val sampleService: SampleService = retrofit.create(SampleService :: class.java)
