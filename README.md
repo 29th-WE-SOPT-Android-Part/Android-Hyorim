@@ -3,7 +3,16 @@
 
 # Week4(서버통신)
 
+
+
 Level1. 필수과제
+
+
+| Sign In | Sign Up |
+|---------|---------|
+| ![Login](https://user-images.githubusercontent.com/59546818/141488927-0c7b7755-ba62-4d48-a338-313f078478ba.gif) | ![SignUp](https://user-images.githubusercontent.com/59546818/141488992-737c4edd-8613-4694-a5dd-4c7bb12335cc.gif) |
+
+
 
 ### 1. Postman Test
 
