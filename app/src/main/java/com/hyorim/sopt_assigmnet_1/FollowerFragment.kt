@@ -1,10 +1,12 @@
 package com.hyorim.sopt_assigmnet_1
 
+import android.graphics.drawable.ClipDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentFollowerBinding
 
 
@@ -19,11 +21,16 @@ class FollowerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFollowerBinding.inflate(layoutInflater, container, false)
-
+        addDiver()
         initAdapter()
         _binding
 
         return binding.root
+    }
+    private fun addDiver(){
+        binding.rvFollower.addItemDecoration(
+            DividerItemDecoration(binding.rvFollower.context, ClipDrawable.HORIZONTAL)
+        )
     }
 
     private fun initAdapter() {
