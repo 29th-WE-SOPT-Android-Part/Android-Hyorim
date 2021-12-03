@@ -17,6 +17,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/ib_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/selector_check"
+        app:layout_constraintBottom_toBottomOf="@id/ID_textView"
+        app:layout_constraintEnd_toStartOf="@id/tv_auto_login"
+        
+        app:layout_constraintTop_toTopOf="@id/ID_textView" />
+
+    <TextView
+        android:id="@+id/tv_auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_login"
+        app:layout_constraintBottom_toBottomOf="@id/ib_check"
+        app:layout_constraintEnd_toEndOf="@id/ID_editText"
+        app:layout_constraintTop_toTopOf="@id/ib_check" />
+
 
     <TextView
         android:id="@+id/ID_textView"
@@ -39,11 +59,11 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/selector_text"
         android:ems="10"
-        android:textFontWeight="400"
         android:hint="@string/id_hint"
         android:paddingStart="16dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
+        android:textFontWeight="400"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/ID_textView"
@@ -73,6 +93,8 @@
         android:hint="@string/pw_hint"
         android:inputType="textPassword"
         android:paddingStart="15dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/ID_editText"
         app:layout_constraintStart_toStartOf="@+id/PW_textView"
