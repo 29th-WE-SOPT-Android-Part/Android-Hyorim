@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.SOPT_Assigmnet_1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="statusBarBackground">@color/grey_status</item>
         <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/black</item>

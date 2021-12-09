@@ -9,11 +9,12 @@ import com.bumptech.glide.module.AppGlideModule
 
 object BindingConversions {
 
-    @BindingAdapter("imageUrl")
-    @JvmStatic
+    @BindingAdapter("imageUrl")       // Binding Adapter 생성
+    @JvmStatic                                   // Static 함수로 설정해주기 위한 Annotation
     fun loadImage(imageView : ImageView, url : Int){
         Glide.with(imageView.context)
             .load(url)
+            .circleCrop()
             .into(imageView)
     }
 

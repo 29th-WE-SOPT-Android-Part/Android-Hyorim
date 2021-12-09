@@ -5,9 +5,13 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
+import com.hyorim.sopt_assigmnet_1.BindingConversions.loadImage
 import com.hyorim.sopt_assigmnet_1.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -22,26 +26,23 @@ class HomeActivity : AppCompatActivity() {
             "Kim Hyo Rim",
             "Kxxhyorim",
             "초보 개발자 김효림",
-            R.drawable.my_photo
+            R.drawable.my_photo     //R.id.~~ 하면 안됨
         )
-
         binding.introduce = introduce   // xml 변수 = line 21
 
         initTransactionEvent()
-//        gitClickEvent()
-
+        gitClickEvent()
+        binding.followerBtn.isSelected = true
     }
 
-
-
-//    private fun gitClickEvent() {
-//        binding.gitIcon.setOnClickListener {
-//            Log.d(tag, "Git Icon Clicked")
-//            val intent = Intent(Intent.ACTION_VIEW)
-//            intent.data = Uri.parse("https://github.com/KxxHyoRim")
-//            startActivity(intent)
-//        }
-//    }
+    private fun gitClickEvent() {
+        binding.profilePhoto.setOnClickListener {
+            Log.d(tag, "Git Icon Clicked")
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://github.com/KxxHyoRim")
+            startActivity(intent)
+        }
+    }
 
     private fun initTransactionEvent() {
         val followerFragment = FollowerFragment()
@@ -62,6 +63,10 @@ class HomeActivity : AppCompatActivity() {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, followerFragment)
             transaction.commit()
+
+            // control btn color
+            binding.followerBtn.isSelected = true
+            binding.repositoryBtn.isSelected = false
         }
     }
 
@@ -70,6 +75,10 @@ class HomeActivity : AppCompatActivity() {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, repositoryFragment)
             transaction.commit()
+
+            // control btn color
+            binding.followerBtn.isSelected = false
+            binding.repositoryBtn.isSelected = true
         }
     }
 
