@@ -22,13 +22,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
 
-        val introduce = Introduce(
+        val profile = ProfileData(
             "Kim Hyo Rim",
             "Kxxhyorim",
             "초보 개발자 김효림",
             R.drawable.my_photo     //R.id.~~ 하면 안됨
         )
-        binding.introduce = introduce   // xml 변수 = line 21
+        binding.profile = profile   // xml 변수 = line 21
 
         initTransactionEvent()
         gitClickEvent()
