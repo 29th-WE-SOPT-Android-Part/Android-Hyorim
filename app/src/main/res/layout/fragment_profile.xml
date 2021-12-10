@@ -107,47 +107,37 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/button_layout"
-            android:layout_width="match_parent"
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/follower_btn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView">
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/selector_btn"
+            android:padding="13dp"
+            android:paddingStart="45dp"
+            android:paddingEnd="45dp"
+            android:text="팔로워 목록"
+            android:textAppearance="@style/SectionH6"
+            android:textColor="@drawable/selector_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nestedScrollView" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/follower_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="191dp"
-                android:background="@drawable/selector_btn"
-                android:padding="13dp"
-                android:paddingStart="45dp"
-                android:paddingEnd="45dp"
-                android:text="팔로워 목록"
-                android:textAppearance="@style/SectionH6"
-                android:textColor="@drawable/selector_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/repository_btn"
-                android:layout_width="163dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/selector_btn"
-                android:padding="13dp"
-                android:text="리파지토리 목록"
-                android:textAppearance="@style/SectionH6"
-                android:textColor="@drawable/selector_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/repository_btn"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/selector_btn"
+            android:includeFontPadding="false"
+            android:padding="13dp"
+            android:text="리파지토리 목록"
+            android:textAppearance="@style/SectionH6"
+            android:textColor="@drawable/selector_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nestedScrollView" />
 
 
         <androidx.fragment.app.FragmentContainerView
@@ -158,7 +148,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_layout" />
+            app:layout_constraintTop_toBottomOf="@id/follower_btn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,18 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hyorim.sopt_assigmnet_1.databinding.FragmentImageBinding
+import com.hyorim.sopt_assigmnet_1.databinding.FragmentGitFollowingBinding
 
-class ImageFragment : Fragment() {
 
-    private var _binding : FragmentImageBinding? = null
+class GitFollowingFragment : Fragment() {
+
+    private var _binding : FragmentGitFollowingBinding? = null
     private val binding get() = _binding ?: error("Not Initialized")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        _binding = FragmentImageBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentGitFollowingBinding.inflate(layoutInflater, container, false)
+
 
         return binding.root
     }
@@ -25,4 +27,5 @@ class ImageFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
