@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="follower"
             type="com.hyorim.sopt_assigmnet_1.FollowerData" />
@@ -16,13 +17,15 @@
 
         <ImageView
             android:id="@+id/iv_profile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="6dp"
-            android:contentDescription="@string/profile_img"
-            android:padding="5dp"
             imageUrl="@{follower.photo}"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/profile_img"
             android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,11 +33,11 @@
             android:id="@+id/name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="1dp"
             android:text="@{follower.name}"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            android:textAppearance="@style/SectionH7"
+            android:textColor="@color/black_text"
             app:layout_constraintStart_toEndOf="@+id/iv_profile"
             app:layout_constraintTop_toTopOf="@+id/iv_profile"
             tools:text="이름" />
@@ -43,12 +46,12 @@
             android:id="@+id/introduction_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:text="@{follower.introduction}"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/iv_profile"
-            app:layout_constraintTop_toBottomOf="@+id/name_tv"
+            android:textAppearance="@style/SectionH8"
+            android:textColor="@color/black_text"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+            app:layout_constraintStart_toStartOf="@id/name_tv"
             tools:text="자기소개" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

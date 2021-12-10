@@ -1,10 +1,12 @@
 package com.hyorim.sopt_assigmnet_1
 
+import android.graphics.drawable.ClipDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentRepositoryBinding
 
 
@@ -19,10 +21,17 @@ class RepositoryFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentRepositoryBinding.inflate(layoutInflater, container, false)
+
         initAdapter()
+        addDiver()
+
         return binding.root
     }
-
+    private fun addDiver(){
+        binding.rvRepository.addItemDecoration(
+            DividerItemDecoration(binding.rvRepository.context, ClipDrawable.HORIZONTAL)
+        )
+    }
     private fun initAdapter() {
         repositoryAdapter = RepositoryAdapter()
 
