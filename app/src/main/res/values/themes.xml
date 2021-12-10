@@ -27,6 +27,12 @@
 
 
     </style>
+    
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/noto_sans_kr_medium</item>
+        <item name="android:textSize">10sp</item>
+    </style>
 
     <style name="HeaderH2">
         <item name="android:fontFamily">@font/noto_sans_kr</item>

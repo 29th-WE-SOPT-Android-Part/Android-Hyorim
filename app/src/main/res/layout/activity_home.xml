@@ -1,164 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
 
-    <data>
-        <variable
-            name="profile"
-            type="com.hyorim.sopt_assigmnet_1.ProfileData" />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_sample"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".HomeActivity">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bnv_sample"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/bubblegum"
-            app:layout_constraintTop_toTopOf="parent">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.BottomNavigationView"
+        app:itemIconTint="@color/selector_bottom_navi"
+        app:itemRippleColor="#FFFFFF"
+        app:itemTextColor="@color/selector_bottom_navi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_sample" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:src="@drawable/icon_setting_2_white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/profile_photo"
-                    android:layout_width="66dp"
-                    android:layout_height="66dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="22dp"
-                    android:layout_marginEnd="0dp"
-                    android:scaleType="fitXY"
-                    app:imageUrl="@{profile.photo}"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@{profile.name}"
-                    android:textAppearance="@style/HeaderH2"
-                    android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/profile_photo"
-                    tools:text="이름" />
-
-
-                <TextView
-                    android:id="@+id/tv_mbti"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{profile.git_id}"
-                    android:textAppearance="@style/HeaderH4"
-                    android:textColor="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
-                    tools:text="kxxhyorim" />
-
-                <View
-                    android:layout_width="2dp"
-                    android:layout_height="15dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="#ffffff"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_introduction"
-                    app:layout_constraintEnd_toStartOf="@id/tv_introduction"
-                    app:layout_constraintTop_toTopOf="@id/tv_introduction" />
-
-
-                <TextView
-                    android:id="@+id/tv_introduction"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="@{profile.introducuction}"
-                    android:textAppearance="@style/HeaderH3"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_mbti"
-                    tools:text="자기소개" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/button_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/follower_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="191dp"
-                android:background="@drawable/selector_btn"
-                android:padding="13dp"
-                android:paddingStart="45dp"
-                android:paddingEnd="45dp"
-                android:text="팔로워 목록"
-                android:textAppearance="@style/SectionH6"
-                android:textColor="@drawable/selector_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/repository_btn"
-                android:layout_width="163dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="184dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/selector_btn"
-                android:padding="13dp"
-                android:text="리파지토리 목록"
-                android:textAppearance="@style/SectionH6"
-                android:textColor="@drawable/selector_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_layout" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
