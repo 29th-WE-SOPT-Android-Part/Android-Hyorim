@@ -27,7 +27,6 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
 
     override fun onBindViewHolder(holder: FollowerViewHolder, position: Int) {
         holder.onBind(followerList[position])
-
     }
 
     override fun getItemCount(): Int = followerList.size

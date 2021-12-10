@@ -16,7 +16,7 @@ class RepositoryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentRepositoryBinding.inflate(layoutInflater, container, false)
         initAdapter()
@@ -38,8 +38,9 @@ class RepositoryFragment : Fragment() {
                 RepositoryData("Data Minding", "곧 중간고사인데 언제 공부할까"),
                 RepositoryData("GridLayout", "연습 중 입니다"),
                 RepositoryData("이게 잘 들어가면", "Recyclerview 가 잘 작동하는것"),
-                )
+            )
         )
+        repositoryAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
