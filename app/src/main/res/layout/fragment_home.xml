@@ -35,18 +35,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        app:layout_constraintBottom_toTopOf="@id/vp_follow"
+        app:layout_constraintBottom_toTopOf="@id/nsh_sample"
         app:layout_constraintTop_toBottomOf="@id/tv_github"
         app:tabIndicatorColor="@color/medium_pink"
         app:tabRippleColor="@color/white"
         app:tabSelectedTextColor="@color/medium_pink"
         app:tabTextAppearance="@style/SectionH9" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_follow"
+    <com.hyorim.sopt_assigmnet_1.NestedScrollableHost
+        android:id="@+id/nsh_sample"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tl_follow" />
+        app:layout_constraintTop_toBottomOf="@id/tl_follow">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_follow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+    </com.hyorim.sopt_assigmnet_1.NestedScrollableHost>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
