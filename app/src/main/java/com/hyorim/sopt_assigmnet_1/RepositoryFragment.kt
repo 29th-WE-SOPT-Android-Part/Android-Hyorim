@@ -1,10 +1,12 @@
 package com.hyorim.sopt_assigmnet_1
 
+import android.graphics.drawable.ClipDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentRepositoryBinding
 
 
@@ -16,13 +18,20 @@ class RepositoryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentRepositoryBinding.inflate(layoutInflater, container, false)
+
         initAdapter()
+        addDiver()
+
         return binding.root
     }
-
+    private fun addDiver(){
+        binding.rvRepository.addItemDecoration(
+            DividerItemDecoration(binding.rvRepository.context, ClipDrawable.HORIZONTAL)
+        )
+    }
     private fun initAdapter() {
         repositoryAdapter = RepositoryAdapter()
 
@@ -38,8 +47,9 @@ class RepositoryFragment : Fragment() {
                 RepositoryData("Data Minding", "곧 중간고사인데 언제 공부할까"),
                 RepositoryData("GridLayout", "연습 중 입니다"),
                 RepositoryData("이게 잘 들어가면", "Recyclerview 가 잘 작동하는것"),
-                )
+            )
         )
+        repositoryAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

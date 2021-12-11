@@ -2,6 +2,7 @@ package com.hyorim.sopt_assigmnet_1
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.hyorim.sopt_assigmnet_1.databinding.RepositoryListBinding
 
@@ -11,14 +12,16 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewH
     class RepositoryViewHolder(private val binding: RepositoryListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: RepositoryData) {
-            binding.repoTitle.text = data.repoTitle
-            binding.repoDescription.text = data.repoDescription
+            binding.repository = data
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
-        val binding =
-            RepositoryListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding: RepositoryListBinding =
+            DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+                R.layout.repository_list,
+                parent,
+                false)
 
         return RepositoryViewHolder(binding)
     }
@@ -28,5 +31,4 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewH
     }
 
     override fun getItemCount(): Int = repositoryList.size
-
 }

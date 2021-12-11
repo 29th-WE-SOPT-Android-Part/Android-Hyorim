@@ -5,4 +5,13 @@
     <string name="introduction">자기소개</string>
     <string name="name">name</string>
     <string name="repository_name">Repository Name</string>
+    <string name="github_id">깃허브 아이디</string>
+    <string name="id_hint">깃허브 아이디를 입력해주세요.</string>
+    <string name="pw">비밀번호</string>
+    <string name="pw_hint">비밀번호를 입력해주세요.</string>
+    <string name="password">패스워드</string>
+    <string name="id">아이디</string>
+    <string name="password2">비밀번호</string>
+    <string name="sign_up">회원가입</string>
+    <string name="github">GitHub</string>
 </resources>
