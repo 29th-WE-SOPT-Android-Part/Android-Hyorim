@@ -12,4 +12,7 @@
     <string name="password">패스워드</string>
     <string name="id">아이디</string>
     <string name="auto_login">자동로그인</string>
+    <string name="password2">비밀번호</string>
+    <string name="sign_up">회원가입</string>
+    <string name="github">GitHub</string>
 </resources>

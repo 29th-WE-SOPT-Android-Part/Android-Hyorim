@@ -12,31 +12,10 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginTop="66dp"
-        android:src="@drawable/img_github"
+        android:src="@drawable/git_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/ib_check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:background="@drawable/selector_check"
-        app:layout_constraintBottom_toBottomOf="@id/ID_textView"
-        app:layout_constraintEnd_toStartOf="@id/tv_auto_login"
-        
-        app:layout_constraintTop_toTopOf="@id/ID_textView" />
-
-    <TextView
-        android:id="@+id/tv_auto_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/auto_login"
-        app:layout_constraintBottom_toBottomOf="@id/ib_check"
-        app:layout_constraintEnd_toEndOf="@id/ID_editText"
-        app:layout_constraintTop_toTopOf="@id/ib_check" />
-
 
     <TextView
         android:id="@+id/ID_textView"
@@ -44,10 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="171dp"
-        android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/github_id"
+        android:textAppearance="@style/HeaderH1"
         android:textColor="@color/black_text"
-        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,13 +35,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/selector_text"
+        android:background="@drawable/selector_et"
         android:ems="10"
         android:hint="@string/id_hint"
         android:paddingStart="16dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:textFontWeight="400"
+        android:textAppearance="@style/SectionH1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/ID_textView"
@@ -75,10 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
-        android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/pw"
-        android:textColor="#333333"
-        android:textSize="14sp"
+        android:textAppearance="@style/HeaderH1"
+        android:textColor="@color/black_text"
         app:layout_constraintStart_toStartOf="@+id/ID_editText"
         app:layout_constraintTop_toBottomOf="@+id/ID_editText" />
 
@@ -87,15 +64,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:background="@drawable/selector_text"
+        android:background="@drawable/selector_et"
         android:ems="10"
-        android:fontFamily="@font/noto_sans_kr_regular"
         android:hint="@string/pw_hint"
         android:inputType="textPassword"
-        android:paddingStart="15dp"
+        android:paddingStart="16dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:textSize="14sp"
+        android:textAppearance="@style/SectionH1"
         app:layout_constraintEnd_toEndOf="@+id/ID_editText"
         app:layout_constraintStart_toStartOf="@+id/PW_textView"
         app:layout_constraintTop_toBottomOf="@+id/PW_textView" />
@@ -104,8 +80,6 @@
         android:id="@+id/loginBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginBottom="74dp"
         android:background="@drawable/button_pink"
         android:fontFamily="@font/noto_sans_kr_bold"
@@ -114,8 +88,8 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/PW_editText"
+        app:layout_constraintStart_toStartOf="@id/PW_editText" />
 
     <TextView
         android:id="@+id/tvNoAccount"
