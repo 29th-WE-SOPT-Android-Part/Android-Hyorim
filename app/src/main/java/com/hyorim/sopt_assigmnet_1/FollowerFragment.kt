@@ -37,7 +37,7 @@ class FollowerFragment : Fragment() {
     private fun initAdapter() {
 
         followerAdapter = FollowerAdapter()
-        _binding!!.rvFollower.adapter = followerAdapter
+        binding.rvFollower.adapter = followerAdapter
         followerAdapter.followerList.addAll(
             listOf(
                 FollowerData(MINION1, "김효림", "내이름"),
