@@ -6,6 +6,12 @@
 - [x] Level 2
 - [x] Level 3
 
+Level 1 | Level 2 | Level 3
+------------ | ------------- | -------------
+제플린 디자인 적용 | NestedScrollableHost를 사용하여 <br> 중첩 스크롤 문제 해결 <br> RecyclerView Item에 각각 다른 이미지 넣기 | 갤러리에서 이미지 받아오기
+<img src="https://user-images.githubusercontent.com/59546818/145691308-ea926baa-a64b-4dd1-a5a7-33825bb48d76.gif" width="250"> | <img src="https://user-images.githubusercontent.com/59546818/145691314-00c16985-ff1a-49f5-984e-24c3583440f6.gif" width="250"> | <img src="https://user-images.githubusercontent.com/59546818/145691332-f9419bbf-47c2-453c-871e-f6b0c1ea434b.gif" width="250">
+
+<br>
 
 
 ## Level1
@@ -14,7 +20,7 @@
 
 
 
-#### 1. Themes
+### 1. Themes
 
 
 
@@ -28,17 +34,17 @@
 
 2. **Text Style**
 
-​		Zeplin의 **Style Guide**에 **Text style catalog** 를 `themes`에 추가
+   ​		Zeplin의 **Style Guide**에 **Text style catalog** 를 `themes`에 추가
 
-```xml
-<style name="HeaderH1">
-    <item name="android:fontFamily">@font/noto_sans_kr</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:textSize">14sp</item>
-</style>
-```
+   ```xml
+   <style name="HeaderH1">
+       <item name="android:fontFamily">@font/noto_sans_kr</item>
+       <item name="android:textStyle">bold</item>
+       <item name="android:textSize">14sp</item>
+   </style>
+   ```
 
-​		xml에서 `android:textAppearance="@style/HeaderH1"`  로 호출
+   ​		xml에서 `android:textAppearance="@style/HeaderH1"`  로 호출
 
 
 
@@ -81,8 +87,10 @@
    ```
 
 
+<br/>
 
-#### 2. Selector
+
+### 2. Selector
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -135,8 +143,10 @@
     <item android:color="@color/white" android:state_selected="true" />
 
 
+<br>
 
-#### 3. Glide 활용
+
+### 3. Glide 활용
 
 dependencies 추가
 
@@ -161,8 +171,9 @@ fun loadImage(imageView : ImageView, url : Int){
 ```
 
 
+<br>
 
-#### 4. Bottom Navigation
+### 4. Bottom Navigation
 
 ​	  **ViewPager2**
 
@@ -194,8 +205,10 @@ fun loadImage(imageView : ImageView, url : Int){
 9. BottomNavigation과 ViewPager2 연동
 
 
+<br/>
 
-#### 5. Tab Layout
+
+### 5. Tab Layout
 
 1. Fragment 생성
 
@@ -205,7 +218,7 @@ fun loadImage(imageView : ImageView, url : Int){
 
 
 
-
+<br><br>
 
 ## Level2
 
@@ -227,6 +240,7 @@ Layout 에서 ViewPager2를 NestedScrollableHost로 감싸기
 </com.hyorim.sopt_assigmnet_1.NestedScrollableHost>
 ```
 
+<br>
 
 
 ### Level 2-2 이미지 추가
@@ -283,6 +297,8 @@ Layout 에서 ViewPager2를 NestedScrollableHost로 감싸기
    ```
 
    
+<br><br>
+
 
 ## Level 3
 
@@ -380,7 +396,8 @@ val binding = DataBindingUtil.setContentView(this, layoutResourceId)
 val binding = DataBindingUtil.inflate(inflater, layoutResourceId, container, false)
 ```
 
-
+<br>
+          
 
 ### Level 3-2
 
@@ -447,7 +464,8 @@ private fun loadImage(imageView : ImageView, uri : Uri?){
 
 
 
-
+<br>
+          
 
 ### 추가로 알게된 내용 : FragmentManager
 
