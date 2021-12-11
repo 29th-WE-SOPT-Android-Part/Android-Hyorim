@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RepositoryFragment">
+    android:background="#dfdfdf"
+    tools:context=".GitFollowingFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_repository"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:fontFamily="@font/noto_sans_kr_medium"
+        android:text="준비중입니다1"
+        android:textColor="@color/black_text"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="4"
-        tools:listitem="@layout/repository_list" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
