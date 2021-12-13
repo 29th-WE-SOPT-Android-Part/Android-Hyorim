@@ -15,4 +15,7 @@
     <string name="password2">비밀번호</string>
     <string name="sign_up">회원가입</string>
     <string name="github">GitHub</string>
+    <string name="onboarding">온보딩</string>
+    <string name="next">다음으로</string>
+    <string name="start">시작하기</string>
 </resources>

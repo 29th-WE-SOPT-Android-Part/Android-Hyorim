@@ -11,6 +11,6 @@ class OnBoardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_onboarding)
+        setContentView(binding.root)
     }
 }
