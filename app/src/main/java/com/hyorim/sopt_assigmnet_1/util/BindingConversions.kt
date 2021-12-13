@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.util
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView

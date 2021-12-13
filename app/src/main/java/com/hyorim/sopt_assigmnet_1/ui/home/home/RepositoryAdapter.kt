@@ -1,9 +1,11 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.home.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.hyorim.sopt_assigmnet_1.R
+import com.hyorim.sopt_assigmnet_1.data.RepositoryData
 import com.hyorim.sopt_assigmnet_1.databinding.RepositoryListBinding
 
 class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {

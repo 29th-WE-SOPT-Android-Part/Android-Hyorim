@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#dfdfdf"
-    tools:context=".GitFollowingFragment">
+    tools:context=".ui.home.home.GitFollowingFragment">
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,20 +1,13 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.home
 
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
-import com.hyorim.sopt_assigmnet_1.BindingConversions.loadImage
+import com.hyorim.sopt_assigmnet_1.R
 import com.hyorim.sopt_assigmnet_1.databinding.ActivityHomeBinding
-import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
+import com.hyorim.sopt_assigmnet_1.ui.home.home.HomeFragment
+import com.hyorim.sopt_assigmnet_1.ui.home.image.ImageFragment
+import com.hyorim.sopt_assigmnet_1.ui.home.profile.ProfileFragment
 
 class HomeActivity : AppCompatActivity() {
 

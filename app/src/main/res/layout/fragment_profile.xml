@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ProfileFragment">
+    tools:context=".ui.home.profile.ProfileFragment">
 
     <data>
 
         <variable
             name="profile"
-            type="com.hyorim.sopt_assigmnet_1.ProfileData" />
+            type="com.hyorim.sopt_assigmnet_1.data.ProfileData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.home.profile
 
 import android.content.Intent
 import android.net.Uri
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hyorim.sopt_assigmnet_1.data.ProfileData
+import com.hyorim.sopt_assigmnet_1.R
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

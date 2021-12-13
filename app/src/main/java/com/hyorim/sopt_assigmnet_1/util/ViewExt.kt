@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.util
 
 import android.content.Context
 import android.widget.Toast

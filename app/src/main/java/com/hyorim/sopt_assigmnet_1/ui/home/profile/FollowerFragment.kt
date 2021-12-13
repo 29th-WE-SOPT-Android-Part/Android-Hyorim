@@ -1,17 +1,17 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.home.profile
 
 import android.graphics.drawable.ClipDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.hyorim.sopt_assigmnet_1.ui.home.home.FollowerAdapter
+import com.hyorim.sopt_assigmnet_1.data.FollowerData
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentFollowerBinding
 
 
-class FollowerFragment : Fragment() {
+class FollowerFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var followerAdapter: FollowerAdapter
     private var _binding: FragmentFollowerBinding? = null

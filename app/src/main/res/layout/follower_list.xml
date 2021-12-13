@@ -7,7 +7,7 @@
 
         <variable
             name="follower"
-            type="com.hyorim.sopt_assigmnet_1.FollowerData" />
+            type="com.hyorim.sopt_assigmnet_1.data.FollowerData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

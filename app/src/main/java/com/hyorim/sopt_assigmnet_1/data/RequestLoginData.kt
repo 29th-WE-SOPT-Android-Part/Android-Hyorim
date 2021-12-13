@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.data
 
 import com.google.gson.annotations.SerializedName
 

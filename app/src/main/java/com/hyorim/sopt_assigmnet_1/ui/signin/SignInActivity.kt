@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.signin
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,13 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.hyorim.sopt_assigmnet_1.data.RequestLoginData
+import com.hyorim.sopt_assigmnet_1.data.ResponseLoginData
+import com.hyorim.sopt_assigmnet_1.util.ServiceCreator
+import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
+import com.hyorim.sopt_assigmnet_1.ui.signup.SignUpActivity
+import com.hyorim.sopt_assigmnet_1.ui.home.HomeActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,13 +82,10 @@ class SignInActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
-
-                    Toast.makeText(this@SignInActivity, "${data?.name}님 반갑습니다", Toast.LENGTH_SHORT)
-                        .show()
+                    shortToast("${data?.name}님 반갑습니다")
                     startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
-//                    finish()    //?
                 } else {
-                    Toast.makeText(this@SignInActivity, "로그인에 실패하셨습니다", Toast.LENGTH_SHORT).show()
+                    shortToast("로그인에 실패하셨습니다")
                 }
             }
 

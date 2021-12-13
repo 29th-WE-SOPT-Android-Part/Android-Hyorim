@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.home.profile
 
 import android.graphics.drawable.ClipDrawable
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.hyorim.sopt_assigmnet_1.data.RepositoryData
+import com.hyorim.sopt_assigmnet_1.ui.home.home.RepositoryAdapter
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentRepositoryBinding
 
 

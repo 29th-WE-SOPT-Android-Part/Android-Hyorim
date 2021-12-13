@@ -1,11 +1,15 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.ui.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.hyorim.sopt_assigmnet_1.data.RequestSignUpData
+import com.hyorim.sopt_assigmnet_1.data.ResponseSignUpData
+import com.hyorim.sopt_assigmnet_1.util.ServiceCreator
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignUpBinding
+import com.hyorim.sopt_assigmnet_1.ui.signin.SignInActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

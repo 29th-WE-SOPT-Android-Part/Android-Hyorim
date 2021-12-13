@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1
+package com.hyorim.sopt_assigmnet_1.util
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
