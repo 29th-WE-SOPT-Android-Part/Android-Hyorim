@@ -7,9 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.hyorim.sopt_assigmnet_1.data.RequestSignUpData
 import com.hyorim.sopt_assigmnet_1.data.ResponseSignUpData
-import com.hyorim.sopt_assigmnet_1.util.ServiceCreator
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignUpBinding
 import com.hyorim.sopt_assigmnet_1.ui.signin.SignInActivity
+import com.hyorim.sopt_assigmnet_1.util.ServiceCreator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,9 +76,10 @@ class SignUpActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
 
                     // SignInActivity 로 이동
-                    var intent = Intent(this@SignUpActivity, SignInActivity::class.java)
-                    intent.putExtra("id", id)
-                        .putExtra("pw", pw)
+                    var intent = Intent(this@SignUpActivity, SignInActivity::class.java).apply {
+                        putExtra("id", id)
+                        putExtra("pw", pw)
+                    }
                     setResult(RESULT_OK, intent)
                     if (!isFinishing) finish()
 
