@@ -47,10 +47,9 @@ class ImageFragment : Fragment() {
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
 
-                    val imageView = binding.ivFromGallery
                     val uri = result.data?.data
+                    binding.imageFromGallery = uri
 
-                    loadImage(imageView, uri)
                 }
             }
     }

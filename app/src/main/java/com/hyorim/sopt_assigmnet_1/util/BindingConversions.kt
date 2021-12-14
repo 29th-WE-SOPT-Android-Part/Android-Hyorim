@@ -1,11 +1,12 @@
 package com.hyorim.sopt_assigmnet_1.util
 
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.bumptech.glide.annotation.GlideModule
-import com.bumptech.glide.module.AppGlideModule
+import com.hyorim.sopt_assigmnet_1.R
+
 
 object BindingConversions {
 
@@ -26,6 +27,16 @@ object BindingConversions {
         Glide.with(context)
             .load(url)
             .circleCrop()
+            .into(this)
+    }
+
+    /** fragment_image 의 갤러리 이미지 */
+    @BindingAdapter("galleryUri")
+    @JvmStatic
+    fun ImageView.galleryUri(url : Uri?){
+        Glide.with(context)
+            .load(url)
+            .error(R.drawable.rectangle_fill_gray_btn)
             .into(this)
     }
 
