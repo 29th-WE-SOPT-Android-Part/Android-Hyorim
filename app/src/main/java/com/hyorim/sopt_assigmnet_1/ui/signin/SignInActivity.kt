@@ -15,6 +15,7 @@ import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
 import com.hyorim.sopt_assigmnet_1.ui.signup.SignUpActivity
 import com.hyorim.sopt_assigmnet_1.ui.home.HomeActivity
+import com.hyorim.sopt_assigmnet_1.util.SOPTSharedPreferences
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,8 +23,6 @@ import retrofit2.Response
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var idEditText: EditText
-    private lateinit var pwEditText: EditText
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,22 +30,24 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        idEditText = binding.IDEditText
-        pwEditText = binding.PWEditText
+        isFromSignUp()
+        initClickEvent()
+        isAutoLogin()
 
+    }
+
+
+    private fun isFromSignUp(){
         /** SignUpActivity에서 넘어온 경우*/
         activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.resultCode == RESULT_OK) {
                     val idFromSignUp = it.data?.getStringExtra("id") ?: ""
                     val pwFromSignUp = it.data?.getStringExtra("pw") ?: ""
-                    idEditText.setText(idFromSignUp)
-                    pwEditText.setText(pwFromSignUp)
+                    binding.IDEditText.setText(idFromSignUp)
+                    binding.IDEditText.setText(pwFromSignUp)
                 }
             }
-
-        initClickEvent()
-
     }
 
     private fun initClickEvent() {
@@ -64,6 +65,19 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, SignUpActivity::class.java)
             activityResultLauncher.launch(intent)
             //startActivity(intent)
+        }
+
+        /** AutoLogin Button*/
+        binding.clAutoLogin.setOnClickListener{
+            val curr = binding.cbAutoLogin.isSelected
+            binding.cbAutoLogin.isSelected = !curr
+        }
+    }
+
+    private fun isAutoLogin(){
+        if (SOPTSharedPreferences.getAutoLogin(this)){
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
     }
 
@@ -83,6 +97,7 @@ class SignInActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val data = response.body()?.data
                     shortToast("${data?.name}님 반갑습니다")
+                    SOPTSharedPreferences.setAutoLogin(this@SignInActivity, binding.cbAutoLogin.isSelected)
                     startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
                 } else {
                     shortToast("로그인에 실패하셨습니다")
@@ -100,8 +115,8 @@ class SignInActivity : AppCompatActivity() {
     private fun isInputComplete(): Boolean {
         // ID, PW의 EditText의 null 여부 판단
 
-        val id = idEditText.text
-        val pw = pwEditText.text
+        val id = binding.IDEditText.text
+        val pw = binding.PWEditText.text
 
         val isIdNull = id.isNullOrBlank()
         val isPwNull = pw.isNullOrBlank()
