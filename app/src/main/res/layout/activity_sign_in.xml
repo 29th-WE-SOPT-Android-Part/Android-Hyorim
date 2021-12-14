@@ -12,7 +12,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginTop="66dp"
-        android:src="@drawable/img_github"
+        android:src="@drawable/git_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

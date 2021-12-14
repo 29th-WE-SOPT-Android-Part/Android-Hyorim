@@ -9,6 +9,9 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
 
@@ -44,9 +47,7 @@ class SignInActivity : AppCompatActivity() {
         /** Login Button*/
         binding.loginBtn.setOnClickListener {
             if (isInputComplete()) {
-                Toast.makeText(this, idEditText.text.toString() + "님 환영합니다", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
+                initNetwork()
             } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
             }
@@ -58,6 +59,39 @@ class SignInActivity : AppCompatActivity() {
             activityResultLauncher.launch(intent)
             //startActivity(intent)
         }
+    }
+
+    private fun initNetwork() {
+        val requestLoginData = RequestLoginData(
+            binding.IDEditText.text.toString(),
+            binding.PWEditText.text.toString()
+        )
+
+        val call: Call<ResponseLoginData> = ServiceCreator.sampleService.postLogin(requestLoginData)
+
+        call.enqueue(object : Callback<ResponseLoginData> {
+            override fun onResponse(
+                call: Call<ResponseLoginData>,
+                response: Response<ResponseLoginData>,
+            ) {
+                if (response.isSuccessful) {
+                    val data = response.body()?.data
+
+                    Toast.makeText(this@SignInActivity, "${data?.name}님 반갑습니다", Toast.LENGTH_SHORT)
+                        .show()
+                    startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+//                    finish()    //?
+                } else {
+                    Toast.makeText(this@SignInActivity, "로그인에 실패하셨습니다", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
+                Log.e("NetworkTest", "error:$t")
+            }
+
+        })
+
     }
 
     private fun isInputComplete(): Boolean {

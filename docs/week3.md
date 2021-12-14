@@ -435,7 +435,7 @@ week1에서 공부했던 StartActivityForResult() 함수가 사용되었다.
 
 ```kotlin
 private lateinit var resultLauncher: ActivityResultLauncher<Intent>
-...
+//...
 private fun setImage() {
     resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -464,7 +464,7 @@ private fun loadImage(imageView : ImageView, uri : Uri?){
 
 
 
-<br>
+<br/>
           
 
 ### 추가로 알게된 내용 : FragmentManager
