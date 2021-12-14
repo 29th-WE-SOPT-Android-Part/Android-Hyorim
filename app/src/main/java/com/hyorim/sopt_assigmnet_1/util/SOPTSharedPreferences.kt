@@ -1,10 +1,8 @@
 package com.hyorim.sopt_assigmnet_1.util
 
-import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
-import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 
 object SOPTSharedPreferences {
 
