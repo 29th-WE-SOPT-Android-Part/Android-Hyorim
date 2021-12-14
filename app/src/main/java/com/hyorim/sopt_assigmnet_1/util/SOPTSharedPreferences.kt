@@ -1,19 +1,37 @@
 package com.hyorim.sopt_assigmnet_1.util
 
+import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
+import android.util.Log
+import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 
 object SOPTSharedPreferences {
 
-    private const val USER_AUTH = "USER_AUTH"
+    private const val STORAGE_KEY = "com.hyorim.sopt_assigmnet_1.USER_AUTH"
     private const val AUTO_LOGIN = "AUTO_LOGIN"
 
-    fun getAutoLogin(context : Context) {
-        val preferences = context.getSharedPreferences(USER_AUTH, Context.MODE_PRIVATE)
+    private fun getPreferences(context: Context): SharedPreferences =
+        context.getSharedPreferences(STORAGE_KEY, Context.MODE_PRIVATE)
 
-        preferences.getBoolean(AUTO_LOGIN, false)
+    fun getAutoLogin(context: Context): Boolean {
+        val preferences = getPreferences(context)
+        return preferences.getBoolean(AUTO_LOGIN, false)
     }
-//    /*
-//    fun setAutoLong(context: Context.
-//        valprefenes
-//    }*/
+
+    fun setAutoLogin(context: Context, value: Boolean) {
+        Log.d("SharedPreferences", "setAutoLogin")
+        val preferences = getPreferences(context)
+        preferences.edit().putBoolean(AUTO_LOGIN, value).apply()
+    }
+
+    fun removeAutoLogin(context: Context) {
+        val preferences = getPreferences(context)
+        preferences.edit().remove(AUTO_LOGIN).apply()
+    }
+
+    fun clearStorage(context: Context) {
+        val preferences = getPreferences(context)
+        preferences.edit().clear().apply()
+    }
 }
