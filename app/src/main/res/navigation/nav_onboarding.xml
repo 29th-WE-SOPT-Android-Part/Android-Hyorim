@@ -21,7 +21,9 @@
         tools:layout="@layout/fragment_on_boarding2">
         <action
             android:id="@+id/action_onBoardingFragment2_to_onBoardingFragment3"
-            app:destination="@id/onBoardingFragment3" />
+            app:destination="@id/onBoardingFragment3"
+            app:popUpTo="@id/onBoardingFragment1"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment3"
