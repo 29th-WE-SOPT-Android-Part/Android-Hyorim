@@ -98,6 +98,7 @@ class SignInActivity : AppCompatActivity() {
                     shortToast("${data?.name}님 반갑습니다")
                     SOPTSharedPreferences.setAutoLogin(this@SignInActivity, binding.cbAutoLogin.isSelected)
                     startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+                    finish()
                 } else {
                     shortToast("로그인에 실패하셨습니다")
                 }
