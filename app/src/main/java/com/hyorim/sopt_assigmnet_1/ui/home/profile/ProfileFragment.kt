@@ -4,13 +4,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hyorim.sopt_assigmnet_1.data.ProfileData
+import androidx.fragment.app.Fragment
 import com.hyorim.sopt_assigmnet_1.R
+import com.hyorim.sopt_assigmnet_1.data.ProfileData
 import com.hyorim.sopt_assigmnet_1.databinding.FragmentProfileBinding
+import com.hyorim.sopt_assigmnet_1.ui.setting.SettingActivity
 
 class ProfileFragment : Fragment() {
 
@@ -23,6 +24,16 @@ class ProfileFragment : Fragment() {
     ): View? {
         _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
 
+        initProfileData()
+        initTransactionEvent()
+        gitClickEvent()
+        initClickListener()
+
+
+        return binding.root
+    }
+
+    private fun initProfileData(){
         val profile = ProfileData(
             "Kim Hyo Rim",
             "Kxxhyorim",
@@ -30,13 +41,13 @@ class ProfileFragment : Fragment() {
             R.drawable.my_photo     //R.id.~~ 하면 안됨
         )
         binding.profile = profile   // xml 변수 = line 21
+    }
 
-        initTransactionEvent()
-        gitClickEvent()
-
-        binding.followerBtn.isSelected = true
-
-        return binding.root
+    private fun initClickListener() {
+        binding.icSetting.setOnClickListener {
+            val intent = Intent(requireActivity(), SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
@@ -50,6 +61,8 @@ class ProfileFragment : Fragment() {
     }
 
     private fun initTransactionEvent() {
+        binding.followerBtn.isSelected = true           // 앱 첫 실행시 default -> follower
+
         val followerFragment = FollowerFragment()
         val repositoryFragment = RepositoryFragment()
 
