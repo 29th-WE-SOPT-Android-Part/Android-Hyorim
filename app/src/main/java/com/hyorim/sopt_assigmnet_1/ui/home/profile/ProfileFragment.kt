@@ -65,9 +65,8 @@ class ProfileFragment : Fragment() {
 
     private fun setFollowerFragment(followerFragment : Fragment) {
         binding.followerBtn.setOnClickListener {
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, followerFragment)
-            transaction.commit()
+
+            onTransaction(followerFragment)
 
             // control btn color
             binding.followerBtn.isSelected = true
@@ -77,14 +76,20 @@ class ProfileFragment : Fragment() {
 
     private fun setRepositoryFragment(repositoryFragment: Fragment) {
         binding.repositoryBtn.setOnClickListener {
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, repositoryFragment)
-            transaction.commit()
+
+            onTransaction(repositoryFragment)
 
             // control btn color
             binding.followerBtn.isSelected = false
             binding.repositoryBtn.isSelected = true
         }
+    }
+
+    private fun onTransaction(targetFragment : Fragment){
+        val transaction = parentFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, targetFragment)
+        transaction.commit()
+
     }
 
     override fun onDestroyView() {
