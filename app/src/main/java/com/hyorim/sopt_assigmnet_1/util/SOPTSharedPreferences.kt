@@ -1,10 +1,6 @@
 package com.hyorim.sopt_assigmnet_1.util
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
-import android.util.Log
-import java.security.AccessController.getContext
 
 object SOPTSharedPreferences {
 
