@@ -6,32 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.onboading.OnBoardingActivity">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_on_boarding"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/onboarding"
-        android:textAppearance="@style/SectionH1"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/container_onboading"
+        android:layout_marginBottom="2dp"
+        android:titleMarginStart="20dp"
+        android:titleTextAppearance="@style/HeaderH1"
+        android:titleTextColor="@color/black_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleCentered="true" />
+
+    <View
+        android:id="@+id/view_grey_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/line_gray"
+        app:layout_constraintTop_toBottomOf="@id/tb_on_boarding" />
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_onboading"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_on_boarding"
         app:navGraph="@navigation/nav_onboarding" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
