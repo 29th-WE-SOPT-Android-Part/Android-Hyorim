@@ -3,8 +3,8 @@ package com.hyorim.sopt_assigmnet_1.ui.setting
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.hyorim.sopt_assigmnet_1.data.SOPTSharedPreferences
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySettingBinding
-import com.hyorim.sopt_assigmnet_1.util.SOPTSharedPreferences
 import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 
 class SettingActivity : AppCompatActivity() {

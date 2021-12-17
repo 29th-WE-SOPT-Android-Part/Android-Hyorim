@@ -4,15 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.hyorim.sopt_assigmnet_1.R
+import com.hyorim.sopt_assigmnet_1.data.SOPTSharedPreferences
 import com.hyorim.sopt_assigmnet_1.databinding.ActivityOnboardingBinding
 import com.hyorim.sopt_assigmnet_1.ui.signin.SignInActivity
-import com.hyorim.sopt_assigmnet_1.util.SOPTSharedPreferences
 
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding
@@ -35,13 +33,7 @@ class OnBoardingActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
 
         setSupportActionBar(binding.tbOnBoarding)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.container_onboading)
-        return navController.navigateUp(appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration )
     }
 
     private fun checkOnBoarding() {

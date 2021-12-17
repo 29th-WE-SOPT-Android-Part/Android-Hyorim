@@ -12,7 +12,7 @@ import com.hyorim.sopt_assigmnet_1.data.ResponseLoginData
 import com.hyorim.sopt_assigmnet_1.databinding.ActivitySignInBinding
 import com.hyorim.sopt_assigmnet_1.ui.home.HomeActivity
 import com.hyorim.sopt_assigmnet_1.ui.signup.SignUpActivity
-import com.hyorim.sopt_assigmnet_1.util.SOPTSharedPreferences
+import com.hyorim.sopt_assigmnet_1.data.SOPTSharedPreferences
 import com.hyorim.sopt_assigmnet_1.util.ServiceCreator
 import com.hyorim.sopt_assigmnet_1.util.ViewExt.shortToast
 import retrofit2.Call

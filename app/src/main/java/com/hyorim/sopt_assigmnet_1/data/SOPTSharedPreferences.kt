@@ -1,4 +1,4 @@
-package com.hyorim.sopt_assigmnet_1.util
+package com.hyorim.sopt_assigmnet_1.data
 
 import android.content.Context
 
