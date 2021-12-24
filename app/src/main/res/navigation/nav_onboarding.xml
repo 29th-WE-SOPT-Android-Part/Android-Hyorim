@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/onBoardingFragment1">
+
+    <fragment
+        android:id="@+id/onBoardingFragment1"
+        android:name="com.hyorim.sopt_assigmnet_1.ui.onboading.OnBoardingFragment1"
+        android:label="첫 번째 화면"
+        tools:layout="@layout/fragment_on_boarding1">
+        <action
+            android:id="@+id/action_onBoardingFragment1_to_onBoardingFragment2"
+            app:destination="@id/onBoardingFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment2"
+        android:name="com.hyorim.sopt_assigmnet_1.ui.onboading.OnBoardingFragment2"
+        android:label="두 번째 화면"
+        tools:layout="@layout/fragment_on_boarding2">
+        <action
+            android:id="@+id/action_onBoardingFragment2_to_onBoardingFragment3"
+            app:destination="@id/onBoardingFragment3"
+            app:popUpTo="@id/onBoardingFragment1"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment3"
+        android:name="com.hyorim.sopt_assigmnet_1.ui.onboading.OnBoardingFragment3"
+        android:label="세 번째 화면"
+        tools:layout="@layout/fragment_on_boarding3" />
+</navigation>

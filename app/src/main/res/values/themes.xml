@@ -15,15 +15,8 @@
         <!-- status bar text color -->
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/noto_sans_kr_medium</item>
 
-
-
-<!--        <item name="android:textViewStyle">@style/TextViewStyle</item>-->
-<!--        <item name="android:buttonStyle">@style/ButtonStyle</item>-->
-<!--        <item name="android:editTextStyle">@style/EditTextStyle</item>-->
-<!--        <item name="android:radioButtonStyle">@style/RadioButtonStyle</item>-->
-<!--        <item name="android:checkboxStyle">@style/CheckboxStyle</item>-->
-        <!-- Customize your theme here. -->
 
 
     </style>

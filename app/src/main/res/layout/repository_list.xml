@@ -6,7 +6,7 @@
     <data>
         <variable
             name="repository"
-            type="com.hyorim.sopt_assigmnet_1.RepositoryData" />
+            type="com.hyorim.sopt_assigmnet_1.data.RepositoryData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
